@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-cordova-plugin-code-push",     "homepage": "https://github.com/npmdoc/node-npmdoc-cordova-plugin-code-push",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-cordova-plugin-code-push.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic api documentation for  cordova-plugin-code-push (v1.9.3-beta)  [![npm package](https://img.shields.io/npm/v/npmdoc-cordova-plugin-code-push.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cordova-plugin-code-push) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cordova-plugin-code-push.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cordova-plugin-code-push)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-cordova-plugin-code-push",
+    "keywords": [
+        "documentation",
+        "cordova-plugin-code-push"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_cordova_plugin_code_push.js",
+    "name": "npmdoc-cordova-plugin-code-push",
+    "nameAlias": "npmdoc_cordova_plugin_code_push",
+    "nameOriginal": "npmdoc-cordova-plugin-code-push",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-cordova-plugin-code-push.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "2017.4.26"
+}

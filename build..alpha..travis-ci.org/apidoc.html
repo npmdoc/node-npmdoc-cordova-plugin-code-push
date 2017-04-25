@@ -1,0 +1,3672 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >cordova-plugin-code-push (v1.9.3-beta)</a>
+</h1>
+<h4>CodePush Plugin for Apache Cordova</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push">module cordova-plugin-code-push</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>codePushUtil
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>fileUtil
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.httpRequester">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>httpRequester
+            <span class="apidocSignatureSpan">(contentType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>localPackage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>nativeAppInfo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.remotePackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>remotePackage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.sdk">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>sdk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>httpRequester.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>localPackage.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>remotePackage.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.codePushUtil">module cordova-plugin-code-push.codePushUtil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.codePushUtil">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>codePushUtil
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.copyUnassignedMembers">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>copyUnassignedMembers
+            <span class="apidocSignatureSpan">(fromParameter, toParameter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.getErrorMessage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>getErrorMessage
+            <span class="apidocSignatureSpan">(e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.getNodeStyleCallbackFor">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>getNodeStyleCallbackFor
+            <span class="apidocSignatureSpan">(successCallback, errorCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.invokeErrorCallback">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>invokeErrorCallback
+            <span class="apidocSignatureSpan">(error, errorCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.logError">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>logError
+            <span class="apidocSignatureSpan">(message, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.codePushUtil.logMessage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>logMessage
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>TAG</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.fileUtil">module cordova-plugin-code-push.fileUtil</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.fileUtil">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>fileUtil
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.copyDirectoryEntriesTo">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>copyDirectoryEntriesTo
+            <span class="apidocSignatureSpan">(sourceDir, destinationDir, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.dataDirectoryExists">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>dataDirectoryExists
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.deleteDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>deleteDirectory
+            <span class="apidocSignatureSpan">(dirLocation, deleteDirCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.deleteEntriesFromDataDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>deleteEntriesFromDataDirectory
+            <span class="apidocSignatureSpan">(dirPath, filesToDelete, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.directoryExists">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>directoryExists
+            <span class="apidocSignatureSpan">(rootUri, path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.entryExistsInDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>entryExistsInDirectory
+            <span class="apidocSignatureSpan">(entry, destinationDir, exists, doesNotExist)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.fileErrorToError">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>fileErrorToError
+            <span class="apidocSignatureSpan">(fileError, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.fileExists">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>fileExists
+            <span class="apidocSignatureSpan">(rootUri, path, fileName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getApplicationDirectory
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationEntry">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getApplicationEntry
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getApplicationFile
+            <span class="apidocSignatureSpan">(path, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getDataDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getDataDirectory
+            <span class="apidocSignatureSpan">(path, createIfNotExists, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getDataFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getDataFile
+            <span class="apidocSignatureSpan">(path, fileName, createIfNotExists, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getDirectory
+            <span class="apidocSignatureSpan">(rootUri, path, createIfNotExists, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getFile
+            <span class="apidocSignatureSpan">(rootUri, path, fileName, createIfNotExists, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getOrCreateFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getOrCreateFile
+            <span class="apidocSignatureSpan">(parent, path, createIfNotExists, success, fail)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.getOrCreateSubDirectory">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getOrCreateSubDirectory
+            <span class="apidocSignatureSpan">(parent, path, createIfNotExists, success, fail)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.readDataFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>readDataFile
+            <span class="apidocSignatureSpan">(path, fileName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.readFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>readFile
+            <span class="apidocSignatureSpan">(rootUri, path, fileName, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.readFileEntry">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>readFileEntry
+            <span class="apidocSignatureSpan">(fileEntry, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.writeStringToDataFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>writeStringToDataFile
+            <span class="apidocSignatureSpan">(content, path, fileName, createIfNotExists, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.fileUtil.writeStringToFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>writeStringToFile
+            <span class="apidocSignatureSpan">(content, rootUri, path, fileName, createIfNotExists, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.httpRequester">module cordova-plugin-code-push.httpRequester</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.httpRequester.httpRequester">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>httpRequester
+            <span class="apidocSignatureSpan">(contentType)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.httpRequester.prototype">module cordova-plugin-code-push.httpRequester.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.httpRequester.prototype.getHttpMethodName">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.httpRequester.prototype.</span>getHttpMethodName
+            <span class="apidocSignatureSpan">(verb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.httpRequester.prototype.request">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.httpRequester.prototype.</span>request
+            <span class="apidocSignatureSpan">(verb, url, callbackOrRequestBody, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.localPackage">module cordova-plugin-code-push.localPackage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.localPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>localPackage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.backupPackageInformationFile">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>backupPackageInformationFile
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.copyCurrentPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>copyCurrentPackage
+            <span class="apidocSignatureSpan">(newPackageLocation, copyCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getCurrentOrDefaultPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getCurrentOrDefaultPackage
+            <span class="apidocSignatureSpan">(packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getDefaultInstallOptions">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getDefaultInstallOptions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getLocalPackageFromMetadata">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getLocalPackageFromMetadata
+            <span class="apidocSignatureSpan">(metadata, packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getOldOrDefaultPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getOldOrDefaultPackage
+            <span class="apidocSignatureSpan">(packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getOldPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getOldPackage
+            <span class="apidocSignatureSpan">(packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getPackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getPackage
+            <span class="apidocSignatureSpan">(packageFile, packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getPackageInfoOrDefault">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getPackageInfoOrDefault
+            <span class="apidocSignatureSpan">(packageFile, packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.getPackageInfoOrNull">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getPackageInfoOrNull
+            <span class="apidocSignatureSpan">(packageFile, packageSuccess, packageError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.handleCleanDeployment">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>handleCleanDeployment
+            <span class="apidocSignatureSpan">(newPackageLocation, cleanDeployCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.handleDeployment">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>handleDeployment
+            <span class="apidocSignatureSpan">(newPackageLocation, deployCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.handleDiffDeployment">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>handleDiffDeployment
+            <span class="apidocSignatureSpan">(newPackageLocation, diffManifest, diffCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.writeCurrentPackageInformation">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>writeCurrentPackageInformation
+            <span class="apidocSignatureSpan">(packageInfoMetadata, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>DeployDir</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>DiffManifestFile</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>DownloadDir</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>DownloadUnzipDir</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>OldPackageInfoFile</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>PackageInfoFile</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>PackageUpdateFileName</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>RootDir</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>VersionsDir</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.localPackage.prototype">module cordova-plugin-code-push.localPackage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.constructor">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.finishInstall">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>finishInstall
+            <span class="apidocSignatureSpan">(deployDir, installOptions, installSuccess, installError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.install">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>install
+            <span class="apidocSignatureSpan">(installSuccess, errorCallback, installOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.writeNewPackageMetadata">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>writeNewPackageMetadata
+            <span class="apidocSignatureSpan">(deployDir, writeMetadataCallback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.nativeAppInfo">module cordova-plugin-code-push.nativeAppInfo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.nativeAppInfo">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>nativeAppInfo
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getApplicationBuildTime">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getApplicationBuildTime
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getApplicationVersion">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getApplicationVersion
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getBinaryHash">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getBinaryHash
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getDeploymentKey">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getDeploymentKey
+            <span class="apidocSignatureSpan">(deploymentKeyCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getServerURL">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getServerURL
+            <span class="apidocSignatureSpan">(serverCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.isFailedUpdate">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>isFailedUpdate
+            <span class="apidocSignatureSpan">(packageHash, checkCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.isFirstRun">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>isFirstRun
+            <span class="apidocSignatureSpan">(packageHash, firstRunCallback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.isPendingUpdate">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>isPendingUpdate
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.remotePackage">module cordova-plugin-code-push.remotePackage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.remotePackage.remotePackage">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>remotePackage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.remotePackage.prototype">module cordova-plugin-code-push.remotePackage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.remotePackage.prototype.abortDownload">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.remotePackage.prototype.</span>abortDownload
+            <span class="apidocSignatureSpan">(abortSuccess, abortError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.remotePackage.prototype.constructor">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.remotePackage.prototype.</span>constructor
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.remotePackage.prototype.download">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.remotePackage.prototype.</span>download
+            <span class="apidocSignatureSpan">(successCallback, errorCallback, downloadProgress)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cordova-plugin-code-push.sdk">module cordova-plugin-code-push.sdk</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.sdk.sdk">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>sdk
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.sdk.getAcquisitionManager">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.sdk.</span>getAcquisitionManager
+            <span class="apidocSignatureSpan">(callback, userDeploymentKey, contentType)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.sdk.reportStatusDeploy">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.sdk.</span>reportStatusDeploy
+            <span class="apidocSignatureSpan">(pkg, status, currentDeploymentKey, previousLabelOrAppVersion, previousDeploymentKey, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cordova-plugin-code-push.sdk.reportStatusDownload">
+            function <span class="apidocSignatureSpan">cordova-plugin-code-push.sdk.</span>reportStatusDownload
+            <span class="apidocSignatureSpan">(pkg, deploymentKey, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push" id="apidoc.module.cordova-plugin-code-push">module cordova-plugin-code-push</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil" id="apidoc.element.cordova-plugin-code-push.codePushUtil">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>codePushUtil
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CodePushUtil() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil" id="apidoc.element.cordova-plugin-code-push.fileUtil">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>fileUtil
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FileUtil() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.httpRequester" id="apidoc.element.cordova-plugin-code-push.httpRequester">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>httpRequester
+        <span class="apidocSignatureSpan">(contentType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpRequester(contentType) {
+    this.contentType = contentType;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage" id="apidoc.element.cordova-plugin-code-push.localPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>localPackage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalPackage() {
+    _super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>nativeAppInfo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NativeAppInfo() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.remotePackage" id="apidoc.element.cordova-plugin-code-push.remotePackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>remotePackage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RemotePackage() {
+    _super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.sdk" id="apidoc.element.cordova-plugin-code-push.sdk">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>sdk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sdk() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.codePushUtil" id="apidoc.module.cordova-plugin-code-push.codePushUtil">module cordova-plugin-code-push.codePushUtil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.codePushUtil" id="apidoc.element.cordova-plugin-code-push.codePushUtil.codePushUtil">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>codePushUtil
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function CodePushUtil() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.copyUnassignedMembers" id="apidoc.element.cordova-plugin-code-push.codePushUtil.copyUnassignedMembers">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>copyUnassignedMembers
+        <span class="apidocSignatureSpan">(fromParameter, toParameter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyUnassignedMembers = function (fromParameter, toParameter) {
+    for (var key in fromParameter) {
+        if (toParameter[key] === undefined || toParameter[key] === null) {
+            toParameter[key] = fromParameter[key];
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+else {
+    var defaultDialogOptions = this.getDefaultUpdateDialogOptions();
+    if (syncOptions.updateDialog) {
+        if (typeof syncOptions.updateDialog !== typeof ({})) {
+            syncOptions.updateDialog = defaultDialogOptions;
+        }
+        else {
+            CodePushUtil.<span class="apidocCodeKeywordSpan">copyUnassignedMembers</span>(defaultDialogOptions, syncOptions.updateDialog
+);
+        }
+    }
+    var defaultOptions = this.getDefaultSyncOptions();
+    CodePushUtil.copyUnassignedMembers(defaultOptions, syncOptions);
+}
+window.codePush.notifyApplicationReady();
+var onError = function (error) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.getErrorMessage" id="apidoc.element.cordova-plugin-code-push.codePushUtil.getErrorMessage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>getErrorMessage
+        <span class="apidocSignatureSpan">(e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getErrorMessage = function (e) {
+    return e &#x26;&#x26; e.message || e &#x26;&#x26; e.toString() || &#x22;&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    deploymentKey = defaultDeploymentKey;
+                    queryUpdate();
+                }
+            });
+        }
+    }
+    catch (e) {
+        CodePushUtil.invokeErrorCallback(new Error(&#x22;An error occurred while querying for updates.&#x22; + CodePushUtil.<span
+ class="apidocCodeKeywordSpan">getErrorMessage</span>(e)), queryError);
+    }
+};
+CodePush.prototype.sync = function (syncCallback, syncOptions, downloadProgress) {
+    if (CodePush.SyncInProgress) {
+        CodePushUtil.logMessage(&#x22;Sync already in progress.&#x22;);
+        syncCallback &#x26;&#x26; syncCallback(SyncStatus.IN_PROGRESS);
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.getNodeStyleCallbackFor" id="apidoc.element.cordova-plugin-code-push.codePushUtil.getNodeStyleCallbackFor">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>getNodeStyleCallbackFor
+        <span class="apidocSignatureSpan">(successCallback, errorCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNodeStyleCallbackFor = function (successCallback, errorCallback) {
+    return function (error, result) {
+        if (error) {
+            errorCallback &#x26;&#x26; errorCallback(error);
+        }
+        else {
+            successCallback &#x26;&#x26; successCallback(result);
+        }
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _this.finishInstall(deployDir, installOptions, installSuccess, installError);
+};
+var newPackageUnzipped = function (unzipError) {
+    if (unzipError) {
+        installError &#x26;&#x26; installError(new Error(&#x22;Could not unzip package. &#x22; + CodePushUtil.getErrorMessage(unzipError
+)));
+    }
+    else {
+        LocalPackage.handleDeployment(newPackageLocation, CodePushUtil.<span class="apidocCodeKeywordSpan">getNodeStyleCallbackFor
+</span>(donePackageFileCopy, installError));
+    }
+};
+FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, false, function (error, directoryEntry) {
+    var unzipPackage = function () {
+        FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, true, function (innerError, unzipDir) {
+            if (innerError) {
+                installError &#x26;&#x26; installError(innerError);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.invokeErrorCallback" id="apidoc.element.cordova-plugin-code-push.codePushUtil.invokeErrorCallback">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>invokeErrorCallback
+        <span class="apidocSignatureSpan">(error, errorCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">invokeErrorCallback = function (error, errorCallback) {
+    CodePushUtil.logError(null, error);
+    errorCallback &#x26;&#x26; errorCallback(error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+    });
+};
+CodePush.prototype.checkForUpdate = function (querySuccess, queryError, deploymentKey) {
+    try {
+        var callback = function (error, remotePackageOrUpdateNotification) {
+            if (error) {
+                CodePushUtil.<span class="apidocCodeKeywordSpan">invokeErrorCallback</span>(error, queryError);
+            }
+            else {
+                var appUpToDate = function () {
+                    CodePushUtil.logMessage(&#x22;App is up to date.&#x22;);
+                    querySuccess &#x26;&#x26; querySuccess(null);
+                };
+                if (remotePackageOrUpdateNotification) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.logError" id="apidoc.element.cordova-plugin-code-push.codePushUtil.logError">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>logError
+        <span class="apidocSignatureSpan">(message, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logError = function (message, error) {
+    var errorMessage = message || &#x22;&#x22; + &#x22; &#x22; + CodePushUtil.getErrorMessage(error);
+    console.error(CodePushUtil.TAG + &#x22; &#x22; + errorMessage);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        label: label,
+        appVersion: appVersion,
+        deploymentKey: deploymentKey,
+        previousLabelOrAppVersion: previousLabelOrAppVersion,
+        previousDeploymentKey: previousDeploymentKey
+    };
+    if (error) {
+        CodePushUtil.<span class="apidocCodeKeywordSpan">logError</span>(&#x22;An error occurred while reporting status: &#x22; +
+JSON.stringify(reportArgs), error);
+        cordova.exec(null, null, &#x22;CodePush&#x22;, &#x22;reportFailed&#x22;, [reportArgs]);
+    }
+    else {
+        CodePushUtil.logMessage(&#x22;Reported status: &#x22; + JSON.stringify(reportArgs));
+        cordova.exec(null, null, &#x22;CodePush&#x22;, &#x22;reportSucceeded&#x22;, [reportArgs]);
+    }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.codePushUtil.logMessage" id="apidoc.element.cordova-plugin-code-push.codePushUtil.logMessage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.codePushUtil.</span>logMessage
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">logMessage = function (msg) {
+    console.log(CodePushUtil.TAG + &#x22; &#x22; + msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        previousDeploymentKey: previousDeploymentKey
+    };
+    if (error) {
+        CodePushUtil.logError(&#x22;An error occurred while reporting status: &#x22; + JSON.stringify(reportArgs), error);
+        cordova.exec(null, null, &#x22;CodePush&#x22;, &#x22;reportFailed&#x22;, [reportArgs]);
+    }
+    else {
+        CodePushUtil.<span class="apidocCodeKeywordSpan">logMessage</span>(&#x22;Reported status: &#x22; + JSON.stringify(reportArgs
+));
+        cordova.exec(null, null, &#x22;CodePush&#x22;, &#x22;reportSucceeded&#x22;, [reportArgs]);
+    }
+};
+switch (status) {
+    case ReportStatus.STORE_VERSION:
+        Sdk.reportStatusDeploy(null, AcquisitionStatus.DeploymentSucceeded, deploymentKey, previousLabelOrAppVersion, previousDeploymentKey
+, reportDone);
+        break;
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.fileUtil" id="apidoc.module.cordova-plugin-code-push.fileUtil">module cordova-plugin-code-push.fileUtil</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.fileUtil" id="apidoc.element.cordova-plugin-code-push.fileUtil.fileUtil">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>fileUtil
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function FileUtil() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.copyDirectoryEntriesTo" id="apidoc.element.cordova-plugin-code-push.fileUtil.copyDirectoryEntriesTo">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>copyDirectoryEntriesTo
+        <span class="apidocSignatureSpan">(sourceDir, destinationDir, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyDirectoryEntriesTo = function (sourceDir, destinationDir, callback) {
+    var fail = function (error) {
+        callback(FileUtil.fileErrorToError(error), null);
+    };
+    var success = function (entries) {
+        var i = 0;
+        var copyOne = function () {
+            if (i &#x3c; entries.length) {
+                var nextEntry = entries[i++];
+                var entryAlreadyInDestination = function (destinationEntry) {
+                    var replaceError = function (fileError) {
+                        callback(new Error(&#x22;Error during entry replacement. Error code: &#x22; + fileError.code), null);
+                    };
+                    if (destinationEntry.isDirectory) {
+                        FileUtil.copyDirectoryEntriesTo(nextEntry, destinationEntry, function (error) {
+                            if (error) {
+                                callback(error, null);
+                            }
+                            else {
+                                copyOne();
+                            }
+                        });
+                    }
+                    else {
+                        var fileEntry = destinationEntry;
+                        fileEntry.remove(function () {
+                            nextEntry.copyTo(destinationDir, nextEntry.name, copyOne, fail);
+                        }, replaceError);
+                    }
+                };
+                var entryNotInDestination = function (error) {
+                    nextEntry.copyTo(destinationDir, nextEntry.name, copyOne, fail);
+                };
+                FileUtil.entryExistsInDirectory(nextEntry, destinationDir, entryAlreadyInDestination, entryNotInDestination);
+            }
+            else {
+                callback(null, null);
+            }
+        };
+        copyOne();
+    };
+    var directoryReader = sourceDir.createReader();
+    directoryReader.readEntries(success, fail);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                if (i &#x3c; entries.length) {
+var nextEntry = entries[i++];
+var entryAlreadyInDestination = function (destinationEntry) {
+    var replaceError = function (fileError) {
+        callback(new Error(&#x22;Error during entry replacement. Error code: &#x22; + fileError.code), null);
+    };
+    if (destinationEntry.isDirectory) {
+        FileUtil.<span class="apidocCodeKeywordSpan">copyDirectoryEntriesTo</span>(nextEntry, destinationEntry, function (error) {
+            if (error) {
+                callback(error, null);
+            }
+            else {
+                copyOne();
+            }
+        });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.dataDirectoryExists" id="apidoc.element.cordova-plugin-code-push.fileUtil.dataDirectoryExists">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>dataDirectoryExists
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dataDirectoryExists = function (path, callback) {
+    FileUtil.directoryExists(cordova.file.dataDirectory, path, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.deleteDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.deleteDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>deleteDirectory
+        <span class="apidocSignatureSpan">(dirLocation, deleteDirCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteDirectory = function (dirLocation, deleteDirCallback) {
+    FileUtil.getDataDirectory(dirLocation, false, function (oldDirError, dirToDelete) {
+        if (oldDirError) {
+            deleteDirCallback(oldDirError, null);
+        }
+        else {
+            var win = function () { deleteDirCallback(null, null); };
+            var fail = function (e) { deleteDirCallback(FileUtil.fileErrorToError(e), null); };
+            dirToDelete.removeRecursively(win, fail);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.deleteEntriesFromDataDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.deleteEntriesFromDataDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>deleteEntriesFromDataDirectory
+        <span class="apidocSignatureSpan">(dirPath, filesToDelete, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deleteEntriesFromDataDirectory = function (dirPath, filesToDelete, callback) {
+    FileUtil.getDataDirectory(dirPath, false, function (error, rootDir) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            var i = 0;
+            var deleteOne = function () {
+                if (i &#x3c; filesToDelete.length) {
+                    var continueDeleting = function () {
+                        i++;
+                        deleteOne();
+                    };
+                    var fail = function (error) {
+                        console.log(&#x22;Could not delete file: &#x22; + filesToDelete[i]);
+                        continueDeleting();
+                    };
+                    var success = function (entry) {
+                        entry.remove(continueDeleting, fail);
+                    };
+                    rootDir.getFile(filesToDelete[i], { create: false, exclusive: false }, success, fail);
+                }
+                else {
+                    callback(null, null);
+                }
+            };
+            deleteOne();
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            LocalPackage.handleCleanDeployment(newPackageLocation, function (cleanDeployError) {
+FileUtil.readFileEntry(diffManifest, function (error, content) {
+    if (error || currentPackageError || cleanDeployError) {
+        handleError(new Error(&#x22;Cannot perform diff-update.&#x22;));
+    }
+    else {
+        var manifest = JSON.parse(content);
+        FileUtil.<span class="apidocCodeKeywordSpan">deleteEntriesFromDataDirectory</span>(newPackageLocation, manifest.deletedFiles
+, function (deleteError) {
+            FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+                if (deleteError || deployDirError) {
+                    handleError(new Error(&#x22;Cannot clean up deleted manifest files.&#x22;));
+                }
+                else {
+                    diffCallback(null, deployDir);
+                }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.directoryExists" id="apidoc.element.cordova-plugin-code-push.fileUtil.directoryExists">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>directoryExists
+        <span class="apidocSignatureSpan">(rootUri, path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">directoryExists = function (rootUri, path, callback) {
+    FileUtil.getDirectory(rootUri, path, false, function (error, dirEntry) {
+        var dirExists = !error &#x26;&#x26; !!dirEntry;
+        callback(null, dirExists);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                }
+            }
+        }
+    };
+    window.resolveLocalFileSystemURL(rootUri, rootDirSuccess, appDirError);
+};
+FileUtil.dataDirectoryExists = function (path, callback) {
+    FileUtil.<span class="apidocCodeKeywordSpan">directoryExists</span>(cordova.file.dataDirectory, path, callback);
+};
+FileUtil.copyDirectoryEntriesTo = function (sourceDir, destinationDir, callback) {
+    var fail = function (error) {
+        callback(FileUtil.fileErrorToError(error), null);
+    };
+    var success = function (entries) {
+        var i = 0;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.entryExistsInDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.entryExistsInDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>entryExistsInDirectory
+        <span class="apidocSignatureSpan">(entry, destinationDir, exists, doesNotExist)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">entryExistsInDirectory = function (entry, destinationDir, exists, doesNotExist) {
+    var options = { create: false, exclusive: false };
+    if (entry.isDirectory) {
+        destinationDir.getDirectory(entry.name, options, exists, doesNotExist);
+    }
+    else {
+        destinationDir.getFile(entry.name, options, exists, doesNotExist);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                        nextEntry.copyTo(destinationDir, nextEntry.name, copyOne, fail);
+                    }, replaceError);
+                }
+            };
+            var entryNotInDestination = function (error) {
+                nextEntry.copyTo(destinationDir, nextEntry.name, copyOne, fail);
+            };
+            FileUtil.<span class="apidocCodeKeywordSpan">entryExistsInDirectory</span>(nextEntry, destinationDir, entryAlreadyInDestination
+, entryNotInDestination);
+        }
+        else {
+            callback(null, null);
+        }
+    };
+    copyOne();
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.fileErrorToError" id="apidoc.element.cordova-plugin-code-push.fileUtil.fileErrorToError">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>fileErrorToError
+        <span class="apidocSignatureSpan">(fileError, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileErrorToError = function (fileError, message) {
+    return new Error((message ? message : &#x22;An error has occurred while performing the operation. &#x22;) + &#x22; Error code: &#x22; + fileError
+.code);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+FileUtil.getFile = function (rootUri, path, fileName, createIfNotExists, callback) {
+    FileUtil.getDirectory(rootUri, path, createIfNotExists, function (error, directoryEntry) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            FileUtil.getOrCreateFile(directoryEntry, fileName, createIfNotExists, function (entry) { callback(null, entry); }, function
+ (error) { callback(FileUtil.<span class="apidocCodeKeywordSpan">fileErrorToError</span>(error), null); });
+        }
+    });
+};
+FileUtil.getDataFile = function (path, fileName, createIfNotExists, callback) {
+    FileUtil.getFile(cordova.file.dataDirectory, path, fileName, createIfNotExists, callback);
+};
+FileUtil.fileExists = function (rootUri, path, fileName, callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.fileExists" id="apidoc.element.cordova-plugin-code-push.fileUtil.fileExists">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>fileExists
+        <span class="apidocSignatureSpan">(rootUri, path, fileName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileExists = function (rootUri, path, fileName, callback) {
+    FileUtil.getFile(rootUri, path, fileName, false, function (error, fileEntry) {
+        var exists = !error &#x26;&#x26; !!fileEntry;
+        callback(null, exists);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getApplicationDirectory
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApplicationDirectory = function (path, callback) {
+    FileUtil.getApplicationEntry(path, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    getCurrentPackageDirectory = function (getCurrentPackageDirectoryCallback) {
+        FileUtil.getDataDirectory(currentPackagePath, false, getCurrentPackageDirectoryCallback);
+    };
+}
+else {
+    newPackageLocation = newPackageLocation + &#x22;/www&#x22;;
+    getCurrentPackageDirectory = function (getCurrentPackageDirectoryCallback) {
+        FileUtil.<span class="apidocCodeKeywordSpan">getApplicationDirectory</span>(&#x22;www&#x22;, getCurrentPackageDirectoryCallback
+);
+    };
+}
+FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+    if (deployDirError) {
+        handleError(new Error(&#x22;Could not acquire the source/destination folders. &#x22;));
+    }
+    else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationEntry" id="apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationEntry">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getApplicationEntry
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApplicationEntry = function (path, callback) {
+    var success = function (entry) {
+        callback(null, entry);
+    };
+    var fail = function (error) {
+        callback(FileUtil.fileErrorToError(error), null);
+    };
+    window.resolveLocalFileSystemURL(cordova.file.applicationDirectory + path, success, fail);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+FileUtil.getDataDirectory = function (path, createIfNotExists, callback) {
+    FileUtil.getDirectory(cordova.file.dataDirectory, path, createIfNotExists, callback);
+};
+FileUtil.writeStringToDataFile = function (content, path, fileName, createIfNotExists, callback) {
+    FileUtil.writeStringToFile(content, cordova.file.dataDirectory, path, fileName, createIfNotExists, callback);
+};
+FileUtil.getApplicationDirectory = function (path, callback) {
+    FileUtil.<span class="apidocCodeKeywordSpan">getApplicationEntry</span>(path, callback);
+};
+FileUtil.getApplicationFile = function (path, callback) {
+    FileUtil.getApplicationEntry(path, callback);
+};
+FileUtil.getOrCreateFile = function (parent, path, createIfNotExists, success, fail) {
+    var failFirst = function (error) {
+        if (!createIfNotExists) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.getApplicationFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getApplicationFile
+        <span class="apidocSignatureSpan">(path, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApplicationFile = function (path, callback) {
+    FileUtil.getApplicationEntry(path, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getDataDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.getDataDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getDataDirectory
+        <span class="apidocSignatureSpan">(path, createIfNotExists, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDataDirectory = function (path, createIfNotExists, callback) {
+    FileUtil.getDirectory(cordova.file.dataDirectory, path, createIfNotExists, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        destinationDir.getDirectory(entry.name, options, exists, doesNotExist);
+    }
+    else {
+        destinationDir.getFile(entry.name, options, exists, doesNotExist);
+    }
+};
+FileUtil.deleteDirectory = function (dirLocation, deleteDirCallback) {
+    FileUtil.<span class="apidocCodeKeywordSpan">getDataDirectory</span>(dirLocation, false, function (oldDirError, dirToDelete) {
+        if (oldDirError) {
+            deleteDirCallback(oldDirError, null);
+        }
+        else {
+            var win = function () { deleteDirCallback(null, null); };
+            var fail = function (e) { deleteDirCallback(FileUtil.fileErrorToError(e), null); };
+            dirToDelete.removeRecursively(win, fail);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getDataFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.getDataFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getDataFile
+        <span class="apidocSignatureSpan">(path, fileName, createIfNotExists, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDataFile = function (path, fileName, createIfNotExists, callback) {
+    FileUtil.getFile(cordova.file.dataDirectory, path, fileName, createIfNotExists, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                }
+            });
+        });
+    }, installError);
+};
+LocalPackage.handleDeployment = function (newPackageLocation, deployCallback) {
+    FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+        FileUtil.<span class="apidocCodeKeywordSpan">getDataFile</span>(LocalPackage.DownloadUnzipDir, LocalPackage.DiffManifestFile
+, false, function (manifestError, diffManifest) {
+            if (!manifestError &#x26;&#x26; !!diffManifest) {
+                LocalPackage.handleDiffDeployment(newPackageLocation, diffManifest, deployCallback);
+            }
+            else {
+                LocalPackage.handleCleanDeployment(newPackageLocation, function (error) {
+                    deployCallback(error, deployDir);
+                });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.getDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getDirectory
+        <span class="apidocSignatureSpan">(rootUri, path, createIfNotExists, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDirectory = function (rootUri, path, createIfNotExists, callback) {
+    var pathArray = path.split(&#x22;/&#x22;);
+    var currentDir;
+    var currentIndex = 0;
+    var appDirError = function (error) {
+        callback(new Error(&#x22;Could not get application subdirectory. Error code: &#x22; + error.code), null);
+    };
+    var rootDirSuccess = function (appDir) {
+        if (!createIfNotExists) {
+            appDir.getDirectory(path, { create: false, exclusive: false }, function (directoryEntry) { callback(null, directoryEntry
+); }, appDirError);
+        }
+        else {
+            currentDir = appDir;
+            if (currentIndex &#x3e;= pathArray.length) {
+                callback(null, appDir);
+            }
+            else {
+                var currentPath = pathArray[currentIndex];
+                currentIndex++;
+                if (currentPath) {
+                    FileUtil.getOrCreateSubDirectory(appDir, currentPath, createIfNotExists, rootDirSuccess, appDirError);
+                }
+                else {
+                    rootDirSuccess(appDir);
+                }
+            }
+        }
+    };
+    window.resolveLocalFileSystemURL(rootUri, rootDirSuccess, appDirError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+&#x22;use strict&#x22;;
+var FileUtil = (function () {
+function FileUtil() {
+}
+FileUtil.directoryExists = function (rootUri, path, callback) {
+    FileUtil.<span class="apidocCodeKeywordSpan">getDirectory</span>(rootUri, path, false, function (error, dirEntry) {
+        var dirExists = !error &#x26;&#x26; !!dirEntry;
+        callback(null, dirExists);
+    });
+};
+FileUtil.fileErrorToError = function (fileError, message) {
+    return new Error((message ? message : &#x22;An error has occurred while performing the operation. &#x22;) + &#x22; Error code
+: &#x22; + fileError.code);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.getFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getFile
+        <span class="apidocSignatureSpan">(rootUri, path, fileName, createIfNotExists, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFile = function (rootUri, path, fileName, createIfNotExists, callback) {
+    FileUtil.getDirectory(rootUri, path, createIfNotExists, function (error, directoryEntry) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            FileUtil.getOrCreateFile(directoryEntry, fileName, createIfNotExists, function (entry) { callback(null, entry); }, function
+ (error) { callback(FileUtil.fileErrorToError(error), null); });
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+FileUtil.getOrCreateFile = function (parent, path, createIfNotExists, success, fail) {
+    var failFirst = function (error) {
+        if (!createIfNotExists) {
+            fail(error);
+        }
+        else {
+            parent.<span class="apidocCodeKeywordSpan">getFile</span>(path, { create: true, exclusive: false }, success, fail);
+        }
+    };
+    parent.getFile(path, { create: false, exclusive: false }, success, failFirst);
+};
+FileUtil.getFile = function (rootUri, path, fileName, createIfNotExists, callback) {
+    FileUtil.getDirectory(rootUri, path, createIfNotExists, function (error, directoryEntry) {
+        if (error) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getOrCreateFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.getOrCreateFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getOrCreateFile
+        <span class="apidocSignatureSpan">(parent, path, createIfNotExists, success, fail)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOrCreateFile = function (parent, path, createIfNotExists, success, fail) {
+    var failFirst = function (error) {
+        if (!createIfNotExists) {
+            fail(error);
+        }
+        else {
+            parent.getFile(path, { create: true, exclusive: false }, success, fail);
+        }
+    };
+    parent.getFile(path, { create: false, exclusive: false }, success, failFirst);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+FileUtil.getFile = function (rootUri, path, fileName, createIfNotExists, callback) {
+    FileUtil.getDirectory(rootUri, path, createIfNotExists, function (error, directoryEntry) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            FileUtil.<span class="apidocCodeKeywordSpan">getOrCreateFile</span>(directoryEntry, fileName, createIfNotExists, function
+ (entry) { callback(null, entry); }, function (error) { callback(FileUtil.fileErrorToError(error), null); });
+        }
+    });
+};
+FileUtil.getDataFile = function (path, fileName, createIfNotExists, callback) {
+    FileUtil.getFile(cordova.file.dataDirectory, path, fileName, createIfNotExists, callback);
+};
+FileUtil.fileExists = function (rootUri, path, fileName, callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.getOrCreateSubDirectory" id="apidoc.element.cordova-plugin-code-push.fileUtil.getOrCreateSubDirectory">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>getOrCreateSubDirectory
+        <span class="apidocSignatureSpan">(parent, path, createIfNotExists, success, fail)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOrCreateSubDirectory = function (parent, path, createIfNotExists, success, fail) {
+    var failFirst = function (error) {
+        if (!createIfNotExists) {
+            fail(error);
+        }
+        else {
+            parent.getDirectory(path, { create: true, exclusive: false }, success, fail);
+        }
+    };
+    parent.getDirectory(path, { create: false, exclusive: false }, success, failFirst);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (currentIndex &#x3e;= pathArray.length) {
+            callback(null, appDir);
+        }
+        else {
+            var currentPath = pathArray[currentIndex];
+            currentIndex++;
+            if (currentPath) {
+                FileUtil.<span class="apidocCodeKeywordSpan">getOrCreateSubDirectory</span>(appDir, currentPath, createIfNotExists
+, rootDirSuccess, appDirError);
+            }
+            else {
+                rootDirSuccess(appDir);
+            }
+        }
+    }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.readDataFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.readDataFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>readDataFile
+        <span class="apidocSignatureSpan">(path, fileName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readDataFile = function (path, fileName, callback) {
+    FileUtil.readFile(cordova.file.dataDirectory, path, fileName, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    return LocalPackage.getPackage(LocalPackage.OldPackageInfoFile, packageSuccess, packageError);
+};
+LocalPackage.getPackage = function (packageFile, packageSuccess, packageError) {
+    var handleError = function (e) {
+        packageError &#x26;&#x26; packageError(new Error(&#x22;Cannot read package information. &#x22; + CodePushUtil.getErrorMessage
+(e)));
+    };
+    try {
+        FileUtil.<span class="apidocCodeKeywordSpan">readDataFile</span>(LocalPackage.RootDir, packageFile, function (error, content
+) {
+            if (error) {
+                handleError(error);
+            }
+            else {
+                try {
+                    var packageInfo = JSON.parse(content);
+                    LocalPackage.getLocalPackageFromMetadata(packageInfo, packageSuccess, packageError);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.readFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.readFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>readFile
+        <span class="apidocSignatureSpan">(rootUri, path, fileName, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFile = function (rootUri, path, fileName, callback) {
+    FileUtil.getFile(rootUri, path, fileName, false, function (error, fileEntry) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            FileUtil.readFileEntry(fileEntry, callback);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+        else {
+            FileUtil.readFileEntry(fileEntry, callback);
+        }
+    });
+};
+FileUtil.readDataFile = function (path, fileName, callback) {
+    FileUtil.<span class="apidocCodeKeywordSpan">readFile</span>(cordova.file.dataDirectory, path, fileName, callback);
+};
+FileUtil.getApplicationEntry = function (path, callback) {
+    var success = function (entry) {
+        callback(null, entry);
+    };
+    var fail = function (error) {
+        callback(FileUtil.fileErrorToError(error), null);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.readFileEntry" id="apidoc.element.cordova-plugin-code-push.fileUtil.readFileEntry">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>readFileEntry
+        <span class="apidocSignatureSpan">(fileEntry, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readFileEntry = function (fileEntry, callback) {
+    fileEntry.file(function (file) {
+        var fileReader = new FileReader();
+        fileReader.onloadend = function (ev) {
+            callback(null, ev.target.result);
+        };
+        fileReader.onerror = function (ev) {
+            callback(new Error(&#x22;Could not get file. Error: &#x22; + ev.error), null);
+        };
+        fileReader.readAsText(file);
+    }, function (error) {
+        callback(new Error(&#x22;Could not get file. Error code: &#x22; + error.code), null);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+FileUtil.readFile = function (rootUri, path, fileName, callback) {
+    FileUtil.getFile(rootUri, path, fileName, false, function (error, fileEntry) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            FileUtil.<span class="apidocCodeKeywordSpan">readFileEntry</span>(fileEntry, callback);
+        }
+    });
+};
+FileUtil.readDataFile = function (path, fileName, callback) {
+    FileUtil.readFile(cordova.file.dataDirectory, path, fileName, callback);
+};
+FileUtil.getApplicationEntry = function (path, callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.writeStringToDataFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.writeStringToDataFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>writeStringToDataFile
+        <span class="apidocSignatureSpan">(content, path, fileName, createIfNotExists, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeStringToDataFile = function (content, path, fileName, createIfNotExists, callback) {
+    FileUtil.writeStringToFile(content, cordova.file.dataDirectory, path, fileName, createIfNotExists, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                }
+            });
+        });
+    });
+};
+LocalPackage.writeCurrentPackageInformation = function (packageInfoMetadata, callback) {
+    var content = JSON.stringify(packageInfoMetadata);
+    FileUtil.<span class="apidocCodeKeywordSpan">writeStringToDataFile</span>(content, LocalPackage.RootDir, LocalPackage.PackageInfoFile
+, true, callback);
+};
+LocalPackage.backupPackageInformationFile = function (callback) {
+    var reportFileError = function (error) {
+        callback(FileUtil.fileErrorToError(error), null);
+    };
+    var copyFile = function (fileToCopy) {
+        fileToCopy.getParent(function (parent) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.fileUtil.writeStringToFile" id="apidoc.element.cordova-plugin-code-push.fileUtil.writeStringToFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.fileUtil.</span>writeStringToFile
+        <span class="apidocSignatureSpan">(content, rootUri, path, fileName, createIfNotExists, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeStringToFile = function (content, rootUri, path, fileName, createIfNotExists, callback) {
+    var gotFile = function (fileEntry) {
+        fileEntry.createWriter(function (writer) {
+            writer.onwriteend = function (ev) {
+                callback(null, null);
+            };
+            writer.onerror = function (ev) {
+                callback(writer.error, null);
+            };
+            writer.write(content);
+        }, function (error) {
+            callback(new Error(&#x22;Could write the current package information file. Error code: &#x22; + error.code), null);
+        });
+    };
+    FileUtil.getFile(rootUri, path, fileName, createIfNotExists, function (error, fileEntry) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            gotFile(fileEntry);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+FileUtil.fileErrorToError = function (fileError, message) {
+    return new Error((message ? message : &#x22;An error has occurred while performing the operation. &#x22;) + &#x22; Error code
+: &#x22; + fileError.code);
+};
+FileUtil.getDataDirectory = function (path, createIfNotExists, callback) {
+    FileUtil.getDirectory(cordova.file.dataDirectory, path, createIfNotExists, callback);
+};
+FileUtil.writeStringToDataFile = function (content, path, fileName, createIfNotExists, callback) {
+    FileUtil.<span class="apidocCodeKeywordSpan">writeStringToFile</span>(content, cordova.file.dataDirectory, path, fileName, createIfNotExists
+, callback);
+};
+FileUtil.getApplicationDirectory = function (path, callback) {
+    FileUtil.getApplicationEntry(path, callback);
+};
+FileUtil.getApplicationFile = function (path, callback) {
+    FileUtil.getApplicationEntry(path, callback);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.httpRequester" id="apidoc.module.cordova-plugin-code-push.httpRequester">module cordova-plugin-code-push.httpRequester</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.httpRequester.httpRequester" id="apidoc.element.cordova-plugin-code-push.httpRequester.httpRequester">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>httpRequester
+        <span class="apidocSignatureSpan">(contentType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HttpRequester(contentType) {
+    this.contentType = contentType;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.httpRequester.prototype" id="apidoc.module.cordova-plugin-code-push.httpRequester.prototype">module cordova-plugin-code-push.httpRequester.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.httpRequester.prototype.getHttpMethodName" id="apidoc.element.cordova-plugin-code-push.httpRequester.prototype.getHttpMethodName">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.httpRequester.prototype.</span>getHttpMethodName
+        <span class="apidocSignatureSpan">(verb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getHttpMethodName = function (verb) {
+    switch (verb) {
+        case 0:
+            return &#x22;GET&#x22;;
+        case 7:
+            return &#x22;CONNECT&#x22;;
+        case 4:
+            return &#x22;DELETE&#x22;;
+        case 1:
+            return &#x22;HEAD&#x22;;
+        case 6:
+            return &#x22;OPTIONS&#x22;;
+        case 8:
+            return &#x22;PATCH&#x22;;
+        case 2:
+            return &#x22;POST&#x22;;
+        case 3:
+            return &#x22;PUT&#x22;;
+        case 5:
+            return &#x22;TRACE&#x22;;
+        default:
+            return null;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!requestCallback &#x26;&#x26; typeof callbackOrRequestBody === &#x22;function&#x22;) {
+    requestCallback = callbackOrRequestBody;
+}
+if (typeof callbackOrRequestBody === &#x22;string&#x22;) {
+    requestBody = callbackOrRequestBody;
+}
+var xhr = new XMLHttpRequest();
+var methodName = this.<span class="apidocCodeKeywordSpan">getHttpMethodName</span>(verb);
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+        var response = { statusCode: xhr.status, body: xhr.responseText };
+        requestCallback &#x26;&#x26; requestCallback(null, response);
+    }
+};
+xhr.open(methodName, url, true);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.httpRequester.prototype.request" id="apidoc.element.cordova-plugin-code-push.httpRequester.prototype.request">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.httpRequester.prototype.</span>request
+        <span class="apidocSignatureSpan">(verb, url, callbackOrRequestBody, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">request = function (verb, url, callbackOrRequestBody, callback) {
+    var requestBody;
+    var requestCallback = callback;
+    if (!requestCallback &#x26;&#x26; typeof callbackOrRequestBody === &#x22;function&#x22;) {
+        requestCallback = callbackOrRequestBody;
+    }
+    if (typeof callbackOrRequestBody === &#x22;string&#x22;) {
+        requestBody = callbackOrRequestBody;
+    }
+    var xhr = new XMLHttpRequest();
+    var methodName = this.getHttpMethodName(verb);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            var response = { statusCode: xhr.status, body: xhr.responseText };
+            requestCallback &#x26;&#x26; requestCallback(null, response);
+        }
+    };
+    xhr.open(methodName, url, true);
+    if (this.contentType) {
+        xhr.setRequestHeader(&#x22;Content-Type&#x22;, this.contentType);
+    }
+    xhr.setRequestHeader(&#x22;X-CodePush-Plugin-Name&#x22;, &#x22;cordova-plugin-code-push&#x22;);
+    xhr.setRequestHeader(&#x22;X-CodePush-Plugin-Version&#x22;, cordova.require(&#x22;cordova/plugin_list&#x22;).metadata[&#x22;cordova-plugin-code-push&#x22;]);
+    xhr.setRequestHeader(&#x22;X-CodePush-SDK-Version&#x22;, cordova.require(&#x22;cordova/plugin_list&#x22;).metadata[&#x22;code-push&#x22;]);
+    xhr.send(requestBody);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.localPackage" id="apidoc.module.cordova-plugin-code-push.localPackage">module cordova-plugin-code-push.localPackage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.localPackage" id="apidoc.element.cordova-plugin-code-push.localPackage.localPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>localPackage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalPackage() {
+    _super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.backupPackageInformationFile" id="apidoc.element.cordova-plugin-code-push.localPackage.backupPackageInformationFile">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>backupPackageInformationFile
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">backupPackageInformationFile = function (callback) {
+    var reportFileError = function (error) {
+        callback(FileUtil.fileErrorToError(error), null);
+    };
+    var copyFile = function (fileToCopy) {
+        fileToCopy.getParent(function (parent) {
+            fileToCopy.copyTo(parent, LocalPackage.OldPackageInfoFile, function () {
+                callback(null, null);
+            }, reportFileError);
+        }, reportFileError);
+    };
+    var gotFile = function (error, currentPackageFile) {
+        if (error) {
+            callback(error, null);
+        }
+        else {
+            FileUtil.getDataFile(LocalPackage.RootDir, LocalPackage.OldPackageInfoFile, false, function (error, oldPackageFile) {
+                if (!error &#x26;&#x26; !!oldPackageFile) {
+                    oldPackageFile.remove(function () {
+                        copyFile(currentPackageFile);
+                    }, reportFileError);
+                }
+                else {
+                    copyFile(currentPackageFile);
+                }
+            });
+        }
+    };
+    FileUtil.getDataFile(LocalPackage.RootDir, LocalPackage.PackageInfoFile, false, gotFile);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var _this = this;
+function backupPackageInformationFileIfNeeded(backupIfNeededDone) {
+    NativeAppInfo.isPendingUpdate(function (pendingUpdate) {
+        if (pendingUpdate) {
+            backupIfNeededDone(null, null);
+        }
+        else {
+            LocalPackage.<span class="apidocCodeKeywordSpan">backupPackageInformationFile</span>(backupIfNeededDone);
+        }
+    });
+}
+LocalPackage.getCurrentOrDefaultPackage(function (oldPackage) {
+    backupPackageInformationFileIfNeeded(function (backupError) {
+        _this.writeNewPackageMetadata(deployDir, function (writeMetadataError) {
+            if (writeMetadataError) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.copyCurrentPackage" id="apidoc.element.cordova-plugin-code-push.localPackage.copyCurrentPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>copyCurrentPackage
+        <span class="apidocSignatureSpan">(newPackageLocation, copyCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyCurrentPackage = function (newPackageLocation, copyCallback) {
+    var handleError = function (e) {
+        copyCallback &#x26;&#x26; copyCallback(e, null);
+    };
+    var doCopy = function (currentPackagePath) {
+        var getCurrentPackageDirectory;
+        if (currentPackagePath) {
+            getCurrentPackageDirectory = function (getCurrentPackageDirectoryCallback) {
+                FileUtil.getDataDirectory(currentPackagePath, false, getCurrentPackageDirectoryCallback);
+            };
+        }
+        else {
+            newPackageLocation = newPackageLocation + &#x22;/www&#x22;;
+            getCurrentPackageDirectory = function (getCurrentPackageDirectoryCallback) {
+                FileUtil.getApplicationDirectory(&#x22;www&#x22;, getCurrentPackageDirectoryCallback);
+            };
+        }
+        FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+            if (deployDirError) {
+                handleError(new Error(&#x22;Could not acquire the source/destination folders. &#x22;));
+            }
+            else {
+                var success = function (currentPackageDirectory) {
+                    FileUtil.copyDirectoryEntriesTo(currentPackageDirectory, deployDir, copyCallback);
+                };
+                var fail = function (fileSystemError) {
+                    copyCallback &#x26;&#x26; copyCallback(FileUtil.fileErrorToError(fileSystemError), null);
+                };
+                getCurrentPackageDirectory(CodePushUtil.getNodeStyleCallbackFor(success, fail));
+            }
+        });
+    };
+    var packageFailure = function (error) {
+        doCopy();
+    };
+    var packageSuccess = function (currentPackage) {
+        doCopy(currentPackage.localPath);
+    };
+    LocalPackage.getPackage(LocalPackage.PackageInfoFile, packageSuccess, packageFailure);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    };
+    LocalPackage.getPackage(LocalPackage.PackageInfoFile, packageSuccess, packageFailure);
+};
+LocalPackage.handleDiffDeployment = function (newPackageLocation, diffManifest, diffCallback) {
+    var handleError = function (e) {
+        diffCallback(e, null);
+    };
+    LocalPackage.<span class="apidocCodeKeywordSpan">copyCurrentPackage</span>(newPackageLocation, function (currentPackageError
+) {
+        LocalPackage.handleCleanDeployment(newPackageLocation, function (cleanDeployError) {
+            FileUtil.readFileEntry(diffManifest, function (error, content) {
+                if (error || currentPackageError || cleanDeployError) {
+                    handleError(new Error(&#x22;Cannot perform diff-update.&#x22;));
+                }
+                else {
+                    var manifest = JSON.parse(content);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getCurrentOrDefaultPackage" id="apidoc.element.cordova-plugin-code-push.localPackage.getCurrentOrDefaultPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getCurrentOrDefaultPackage
+        <span class="apidocSignatureSpan">(packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getCurrentOrDefaultPackage = function (packageSuccess, packageError) {
+    LocalPackage.getPackageInfoOrDefault(LocalPackage.PackageInfoFile, packageSuccess, packageError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+var queryUpdate = function () {
+    Sdk.getAcquisitionManager(function (initError, acquisitionManager) {
+        if (initError) {
+            CodePushUtil.invokeErrorCallback(initError, queryError);
+        }
+        else {
+            LocalPackage.<span class="apidocCodeKeywordSpan">getCurrentOrDefaultPackage</span>(function (localPackage) {
+                NativeAppInfo.getApplicationVersion(function(appVersionError, currentBinaryVersion) {
+                    if (!appVersionError) {
+                        localPackage.appVersion = currentBinaryVersion;
+                    }
+                    CodePushUtil.logMessage(&#x22;Checking for update.&#x22;);
+                    acquisitionManager.queryUpdateWithCurrentPackage(localPackage, callback);
+                });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getDefaultInstallOptions" id="apidoc.element.cordova-plugin-code-push.localPackage.getDefaultInstallOptions">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getDefaultInstallOptions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefaultInstallOptions = function () {
+    if (!LocalPackage.DefaultInstallOptions) {
+        LocalPackage.DefaultInstallOptions = {
+            installMode: InstallMode.ON_NEXT_RESTART,
+            minimumBackgroundDuration: 0,
+            mandatoryInstallMode: InstallMode.IMMEDIATE
+        };
+    }
+    return LocalPackage.DefaultInstallOptions;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _super.apply(this, arguments);
+}
+LocalPackage.prototype.install = function (installSuccess, errorCallback, installOptions) {
+    var _this = this;
+    try {
+        CodePushUtil.logMessage(&#x22;Installing update&#x22;);
+        if (!installOptions) {
+            installOptions = LocalPackage.<span class="apidocCodeKeywordSpan">getDefaultInstallOptions</span>();
+        }
+        else {
+            CodePushUtil.copyUnassignedMembers(LocalPackage.getDefaultInstallOptions(), installOptions);
+        }
+        var installError = function (error) {
+            CodePushUtil.invokeErrorCallback(error, errorCallback);
+            Sdk.reportStatusDeploy(_this, AcquisitionStatus.DeploymentFailed, _this.deploymentKey);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getLocalPackageFromMetadata" id="apidoc.element.cordova-plugin-code-push.localPackage.getLocalPackageFromMetadata">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getLocalPackageFromMetadata
+        <span class="apidocSignatureSpan">(metadata, packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLocalPackageFromMetadata = function (metadata, packageSuccess, packageError) {
+    if (!metadata) {
+        packageError &#x26;&#x26; packageError(new Error(&#x22;Invalid package metadata.&#x22;));
+    }
+    else {
+        NativeAppInfo.isFailedUpdate(metadata.packageHash, function (installFailed) {
+            NativeAppInfo.isFirstRun(metadata.packageHash, function (isFirstRun) {
+                var localPackage = new LocalPackage();
+                localPackage.appVersion = metadata.appVersion;
+                localPackage.deploymentKey = metadata.deploymentKey;
+                localPackage.description = metadata.description;
+                localPackage.failedInstall = installFailed;
+                localPackage.isFirstRun = isFirstRun;
+                localPackage.label = metadata.label;
+                localPackage.localPath = metadata.localPath;
+                localPackage.packageHash = metadata.packageHash;
+                localPackage.packageSize = metadata.packageSize;
+                packageSuccess &#x26;&#x26; packageSuccess(localPackage);
+            });
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    FileUtil.readDataFile(LocalPackage.RootDir, packageFile, function (error, content) {
+        if (error) {
+            handleError(error);
+        }
+        else {
+            try {
+                var packageInfo = JSON.parse(content);
+                LocalPackage.<span class="apidocCodeKeywordSpan">getLocalPackageFromMetadata</span>(packageInfo, packageSuccess,
+packageError);
+            }
+            catch (e) {
+                handleError(e);
+            }
+        }
+    });
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getOldOrDefaultPackage" id="apidoc.element.cordova-plugin-code-push.localPackage.getOldOrDefaultPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getOldOrDefaultPackage
+        <span class="apidocSignatureSpan">(packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOldOrDefaultPackage = function (packageSuccess, packageError) {
+    LocalPackage.getPackageInfoOrDefault(LocalPackage.OldPackageInfoFile, packageSuccess, packageError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getOldPackage" id="apidoc.element.cordova-plugin-code-push.localPackage.getOldPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getOldPackage
+        <span class="apidocSignatureSpan">(packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getOldPackage = function (packageSuccess, packageError) {
+    return LocalPackage.getPackage(LocalPackage.OldPackageInfoFile, packageSuccess, packageError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getPackage" id="apidoc.element.cordova-plugin-code-push.localPackage.getPackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getPackage
+        <span class="apidocSignatureSpan">(packageFile, packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPackage = function (packageFile, packageSuccess, packageError) {
+    var handleError = function (e) {
+        packageError &#x26;&#x26; packageError(new Error(&#x22;Cannot read package information. &#x22; + CodePushUtil.getErrorMessage(e)));
+    };
+    try {
+        FileUtil.readDataFile(LocalPackage.RootDir, packageFile, function (error, content) {
+            if (error) {
+                handleError(error);
+            }
+            else {
+                try {
+                    var packageInfo = JSON.parse(content);
+                    LocalPackage.getLocalPackageFromMetadata(packageInfo, packageSuccess, packageError);
+                }
+                catch (e) {
+                    handleError(e);
+                }
+            }
+        });
+    }
+    catch (e) {
+        handleError(e);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    };
+    var packageFailure = function (error) {
+        doCopy();
+    };
+    var packageSuccess = function (currentPackage) {
+        doCopy(currentPackage.localPath);
+    };
+    LocalPackage.<span class="apidocCodeKeywordSpan">getPackage</span>(LocalPackage.PackageInfoFile, packageSuccess, packageFailure
+);
+};
+LocalPackage.handleDiffDeployment = function (newPackageLocation, diffManifest, diffCallback) {
+    var handleError = function (e) {
+        diffCallback(e, null);
+    };
+    LocalPackage.copyCurrentPackage(newPackageLocation, function (currentPackageError) {
+        LocalPackage.handleCleanDeployment(newPackageLocation, function (cleanDeployError) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getPackageInfoOrDefault" id="apidoc.element.cordova-plugin-code-push.localPackage.getPackageInfoOrDefault">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getPackageInfoOrDefault
+        <span class="apidocSignatureSpan">(packageFile, packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPackageInfoOrDefault = function (packageFile, packageSuccess, packageError) {
+    var packageFailure = function (error) {
+        NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+            if (appVersionError) {
+                CodePushUtil.logError(&#x22;Could not get application version.&#x22; + appVersionError);
+                packageError(appVersionError);
+                return;
+            }
+            NativeAppInfo.getBinaryHash(function (binaryHashError, binaryHash) {
+                var defaultPackage = new LocalPackage();
+                defaultPackage.appVersion = appVersion;
+                if (binaryHashError) {
+                    CodePushUtil.logError(&#x22;Could not get binary hash.&#x22; + binaryHashError);
+                }
+                else {
+                    defaultPackage.packageHash = binaryHash;
+                }
+                packageSuccess(defaultPackage);
+            });
+        });
+    };
+    LocalPackage.getPackage(packageFile, packageSuccess, packageFailure);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                localPackage.packageSize = metadata.packageSize;
+                packageSuccess &#x26;&#x26; packageSuccess(localPackage);
+            });
+        });
+    }
+};
+LocalPackage.getCurrentOrDefaultPackage = function (packageSuccess, packageError) {
+    LocalPackage.<span class="apidocCodeKeywordSpan">getPackageInfoOrDefault</span>(LocalPackage.PackageInfoFile, packageSuccess
+, packageError);
+};
+LocalPackage.getOldOrDefaultPackage = function (packageSuccess, packageError) {
+    LocalPackage.getPackageInfoOrDefault(LocalPackage.OldPackageInfoFile, packageSuccess, packageError);
+};
+LocalPackage.getPackageInfoOrDefault = function (packageFile, packageSuccess, packageError) {
+    var packageFailure = function (error) {
+        NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.getPackageInfoOrNull" id="apidoc.element.cordova-plugin-code-push.localPackage.getPackageInfoOrNull">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>getPackageInfoOrNull
+        <span class="apidocSignatureSpan">(packageFile, packageSuccess, packageError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPackageInfoOrNull = function (packageFile, packageSuccess, packageError) {
+    LocalPackage.getPackage(packageFile, packageSuccess, packageSuccess.bind(null, null));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            Sdk.reportStatusDeploy(createPackageForReporting(label, appVersion), AcquisitionStatus.DeploymentFailed, deploymentKey
+, previousLabelOrAppVersion, previousDeploymentKey, reportDone);
+            break;
+    }
+};
+CodePush.prototype.getCurrentPackage = function (packageSuccess, packageError) {
+    NativeAppInfo.isPendingUpdate(function (pendingUpdate) {
+        var packageInfoFile = pendingUpdate ? LocalPackage.OldPackageInfoFile : LocalPackage.PackageInfoFile;
+        LocalPackage.<span class="apidocCodeKeywordSpan">getPackageInfoOrNull</span>(packageInfoFile, packageSuccess, packageError
+);
+    });
+};
+CodePush.prototype.getPendingPackage = function (packageSuccess, packageError) {
+    NativeAppInfo.isPendingUpdate(function (pendingUpdate) {
+        if (pendingUpdate) {
+            LocalPackage.getPackageInfoOrNull(LocalPackage.PackageInfoFile, packageSuccess, packageError);
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.handleCleanDeployment" id="apidoc.element.cordova-plugin-code-push.localPackage.handleCleanDeployment">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>handleCleanDeployment
+        <span class="apidocSignatureSpan">(newPackageLocation, cleanDeployCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleCleanDeployment = function (newPackageLocation, cleanDeployCallback) {
+    FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+        FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, false, function (unzipDirErr, unzipDir) {
+            if (unzipDirErr || deployDirError) {
+                cleanDeployCallback(new Error(&#x22;Could not copy new package.&#x22;), null);
+            }
+            else {
+                FileUtil.copyDirectoryEntriesTo(unzipDir, deployDir, function (copyError) {
+                    if (copyError) {
+                        cleanDeployCallback(copyError, null);
+                    }
+                    else {
+                        cleanDeployCallback(null, deployDir);
+                    }
+                });
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+LocalPackage.handleDeployment = function (newPackageLocation, deployCallback) {
+    FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+        FileUtil.getDataFile(LocalPackage.DownloadUnzipDir, LocalPackage.DiffManifestFile, false, function (manifestError, diffManifest
+) {
+            if (!manifestError &#x26;&#x26; !!diffManifest) {
+                LocalPackage.handleDiffDeployment(newPackageLocation, diffManifest, deployCallback);
+            }
+            else {
+                LocalPackage.<span class="apidocCodeKeywordSpan">handleCleanDeployment</span>(newPackageLocation, function (error
+) {
+                    deployCallback(error, deployDir);
+                });
+            }
+        });
+    });
+};
+LocalPackage.prototype.writeNewPackageMetadata = function (deployDir, writeMetadataCallback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.handleDeployment" id="apidoc.element.cordova-plugin-code-push.localPackage.handleDeployment">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>handleDeployment
+        <span class="apidocSignatureSpan">(newPackageLocation, deployCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleDeployment = function (newPackageLocation, deployCallback) {
+    FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+        FileUtil.getDataFile(LocalPackage.DownloadUnzipDir, LocalPackage.DiffManifestFile, false, function (manifestError, diffManifest
+) {
+            if (!manifestError &#x26;&#x26; !!diffManifest) {
+                LocalPackage.handleDiffDeployment(newPackageLocation, diffManifest, deployCallback);
+            }
+            else {
+                LocalPackage.handleCleanDeployment(newPackageLocation, function (error) {
+                    deployCallback(error, deployDir);
+                });
+            }
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    _this.finishInstall(deployDir, installOptions, installSuccess, installError);
+};
+var newPackageUnzipped = function (unzipError) {
+    if (unzipError) {
+        installError &#x26;&#x26; installError(new Error(&#x22;Could not unzip package. &#x22; + CodePushUtil.getErrorMessage(unzipError
+)));
+    }
+    else {
+        LocalPackage.<span class="apidocCodeKeywordSpan">handleDeployment</span>(newPackageLocation, CodePushUtil.getNodeStyleCallbackFor
+(donePackageFileCopy, installError));
+    }
+};
+FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, false, function (error, directoryEntry) {
+    var unzipPackage = function () {
+        FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, true, function (innerError, unzipDir) {
+            if (innerError) {
+                installError &#x26;&#x26; installError(innerError);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.handleDiffDeployment" id="apidoc.element.cordova-plugin-code-push.localPackage.handleDiffDeployment">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>handleDiffDeployment
+        <span class="apidocSignatureSpan">(newPackageLocation, diffManifest, diffCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleDiffDeployment = function (newPackageLocation, diffManifest, diffCallback) {
+    var handleError = function (e) {
+        diffCallback(e, null);
+    };
+    LocalPackage.copyCurrentPackage(newPackageLocation, function (currentPackageError) {
+        LocalPackage.handleCleanDeployment(newPackageLocation, function (cleanDeployError) {
+            FileUtil.readFileEntry(diffManifest, function (error, content) {
+                if (error || currentPackageError || cleanDeployError) {
+                    handleError(new Error(&#x22;Cannot perform diff-update.&#x22;));
+                }
+                else {
+                    var manifest = JSON.parse(content);
+                    FileUtil.deleteEntriesFromDataDirectory(newPackageLocation, manifest.deletedFiles, function (deleteError) {
+                        FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+                            if (deleteError || deployDirError) {
+                                handleError(new Error(&#x22;Cannot clean up deleted manifest files.&#x22;));
+                            }
+                            else {
+                                diffCallback(null, deployDir);
+                            }
+                        });
+                    });
+                }
+            });
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        });
+    }, installError);
+};
+LocalPackage.handleDeployment = function (newPackageLocation, deployCallback) {
+    FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+        FileUtil.getDataFile(LocalPackage.DownloadUnzipDir, LocalPackage.DiffManifestFile, false, function (manifestError, diffManifest
+) {
+            if (!manifestError &#x26;&#x26; !!diffManifest) {
+                LocalPackage.<span class="apidocCodeKeywordSpan">handleDiffDeployment</span>(newPackageLocation, diffManifest, deployCallback
+);
+            }
+            else {
+                LocalPackage.handleCleanDeployment(newPackageLocation, function (error) {
+                    deployCallback(error, deployDir);
+                });
+            }
+        });
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.writeCurrentPackageInformation" id="apidoc.element.cordova-plugin-code-push.localPackage.writeCurrentPackageInformation">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.</span>writeCurrentPackageInformation
+        <span class="apidocSignatureSpan">(packageInfoMetadata, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeCurrentPackageInformation = function (packageInfoMetadata, callback) {
+    var content = JSON.stringify(packageInfoMetadata);
+    FileUtil.writeStringToDataFile(content, LocalPackage.RootDir, LocalPackage.PackageInfoFile, true, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                packageSize: _this.packageSize,
+                label: _this.label,
+                packageHash: _this.packageHash,
+                isFirstRun: false,
+                failedInstall: false,
+                install: undefined
+            };
+            LocalPackage.<span class="apidocCodeKeywordSpan">writeCurrentPackageInformation</span>(currentPackageMetadata, writeMetadataCallback
+);
+        });
+    });
+};
+LocalPackage.handleCleanDeployment = function (newPackageLocation, cleanDeployCallback) {
+    FileUtil.getDataDirectory(newPackageLocation, true, function (deployDirError, deployDir) {
+        FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, false, function (unzipDirErr, unzipDir) {
+            if (unzipDirErr || deployDirError) {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.localPackage.prototype" id="apidoc.module.cordova-plugin-code-push.localPackage.prototype">module cordova-plugin-code-push.localPackage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.constructor" id="apidoc.element.cordova-plugin-code-push.localPackage.prototype.constructor">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LocalPackage() {
+    _super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.finishInstall" id="apidoc.element.cordova-plugin-code-push.localPackage.prototype.finishInstall">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>finishInstall
+        <span class="apidocSignatureSpan">(deployDir, installOptions, installSuccess, installError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">finishInstall = function (deployDir, installOptions, installSuccess, installError) {
+    var _this = this;
+    function backupPackageInformationFileIfNeeded(backupIfNeededDone) {
+        NativeAppInfo.isPendingUpdate(function (pendingUpdate) {
+            if (pendingUpdate) {
+                backupIfNeededDone(null, null);
+            }
+            else {
+                LocalPackage.backupPackageInformationFile(backupIfNeededDone);
+            }
+        });
+    }
+    LocalPackage.getCurrentOrDefaultPackage(function (oldPackage) {
+        backupPackageInformationFileIfNeeded(function (backupError) {
+            _this.writeNewPackageMetadata(deployDir, function (writeMetadataError) {
+                if (writeMetadataError) {
+                    installError &#x26;&#x26; installError(writeMetadataError);
+                }
+                else {
+                    var invokeSuccessAndInstall = function () {
+                        CodePushUtil.logMessage(&#x22;Install succeeded.&#x22;);
+                        var installModeToUse = _this.isMandatory ? installOptions.mandatoryInstallMode : installOptions.installMode
+;
+                        if (installModeToUse === InstallMode.IMMEDIATE) {
+                            installSuccess &#x26;&#x26; installSuccess(installModeToUse);
+                            cordova.exec(function () { }, function () { }, &#x22;CodePush&#x22;, &#x22;install&#x22;, [deployDir.fullPath,
+                                installModeToUse.toString(), installOptions.minimumBackgroundDuration.toString()]);
+                        }
+                        else {
+                            cordova.exec(function () { installSuccess &#x26;&#x26; installSuccess(installModeToUse); }, function () { installError
+ &#x26;&#x26; installError(); }, &#x22;CodePush&#x22;, &#x22;install&#x22;, [deployDir.fullPath,
+                                installModeToUse.toString(), installOptions.minimumBackgroundDuration.toString()]);
+                        }
+                    };
+                    var preInstallSuccess = function () {
+                        invokeSuccessAndInstall();
+                    };
+                    var preInstallFailure = function (preInstallError) {
+                        CodePushUtil.logError(&#x22;Preinstall failure.&#x22;, preInstallError);
+                        var error = new Error(&#x22;An error has occured while installing the package. &#x22; + CodePushUtil.getErrorMessage
+(preInstallError));
+                        installError &#x26;&#x26; installError(error);
+                    };
+                    cordova.exec(preInstallSuccess, preInstallFailure, &#x22;CodePush&#x22;, &#x22;preInstall&#x22;, [deployDir.fullPath]);
+                }
+            });
+        });
+    }, installError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var installError = function (error) {
+    CodePushUtil.invokeErrorCallback(error, errorCallback);
+    Sdk.reportStatusDeploy(_this, AcquisitionStatus.DeploymentFailed, _this.deploymentKey);
+};
+var newPackageLocation = LocalPackage.VersionsDir + &#x22;/&#x22; + this.packageHash;
+var donePackageFileCopy = function (deployDir) {
+    _this.localPath = deployDir.fullPath;
+    _this.<span class="apidocCodeKeywordSpan">finishInstall</span>(deployDir, installOptions, installSuccess, installError);
+};
+var newPackageUnzipped = function (unzipError) {
+    if (unzipError) {
+        installError &#x26;&#x26; installError(new Error(&#x22;Could not unzip package. &#x22; + CodePushUtil.getErrorMessage(unzipError
+)));
+    }
+    else {
+        LocalPackage.handleDeployment(newPackageLocation, CodePushUtil.getNodeStyleCallbackFor(donePackageFileCopy, installError
+));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.install" id="apidoc.element.cordova-plugin-code-push.localPackage.prototype.install">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>install
+        <span class="apidocSignatureSpan">(installSuccess, errorCallback, installOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">install = function (installSuccess, errorCallback, installOptions) {
+    var _this = this;
+    try {
+        CodePushUtil.logMessage(&#x22;Installing update&#x22;);
+        if (!installOptions) {
+            installOptions = LocalPackage.getDefaultInstallOptions();
+        }
+        else {
+            CodePushUtil.copyUnassignedMembers(LocalPackage.getDefaultInstallOptions(), installOptions);
+        }
+        var installError = function (error) {
+            CodePushUtil.invokeErrorCallback(error, errorCallback);
+            Sdk.reportStatusDeploy(_this, AcquisitionStatus.DeploymentFailed, _this.deploymentKey);
+        };
+        var newPackageLocation = LocalPackage.VersionsDir + &#x22;/&#x22; + this.packageHash;
+        var donePackageFileCopy = function (deployDir) {
+            _this.localPath = deployDir.fullPath;
+            _this.finishInstall(deployDir, installOptions, installSuccess, installError);
+        };
+        var newPackageUnzipped = function (unzipError) {
+            if (unzipError) {
+                installError &#x26;&#x26; installError(new Error(&#x22;Could not unzip package. &#x22; + CodePushUtil.getErrorMessage(unzipError)));
+            }
+            else {
+                LocalPackage.handleDeployment(newPackageLocation, CodePushUtil.getNodeStyleCallbackFor(donePackageFileCopy, installError
+));
+            }
+        };
+        FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, false, function (error, directoryEntry) {
+            var unzipPackage = function () {
+                FileUtil.getDataDirectory(LocalPackage.DownloadUnzipDir, true, function (innerError, unzipDir) {
+                    if (innerError) {
+                        installError &#x26;&#x26; installError(innerError);
+                    }
+                    else {
+                        zip.unzip(_this.localPath, unzipDir.toInternalURL(), newPackageUnzipped);
+                    }
+                });
+            };
+            if (!error &#x26;&#x26; !!directoryEntry) {
+                directoryEntry.removeRecursively(function () {
+                    unzipPackage();
+                }, function (cleanupError) {
+                    installError &#x26;&#x26; installError(FileUtil.fileErrorToError(cleanupError));
+                });
+            }
+            else {
+                unzipPackage();
+            }
+        });
+    }
+    catch (e) {
+        installError &#x26;&#x26; installError(new Error(&#x22;An error occured while installing the package. &#x22; + CodePushUtil.getErrorMessage(
+e)));
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var onInstallSuccess = function () {
+console.log(&#x22;Installation succeeded.&#x22;);
+};
+
+var onPackageDownloaded = function (localPackage) {
+// Install regular updates after someone navigates away from the app for more than 2 minutes
+// Install mandatory updates after someone restarts the app
+localPackage.<span class="apidocCodeKeywordSpan">install</span>(onInstallSuccess, onError, { installMode: InstallMode.ON_NEXT_RESUME
+, minimumBackgroundDuration: 120, mandatoryInstallMode: InstallMode.ON_NEXT_RESTART });
+};
+
+var onUpdateCheck = function (remotePackage) {
+if (!remotePackage) {
+    console.log(&#x22;The application is up to date.&#x22;);
+} else {
+    // The hash of each previously reverted package is stored for later use.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.localPackage.prototype.writeNewPackageMetadata" id="apidoc.element.cordova-plugin-code-push.localPackage.prototype.writeNewPackageMetadata">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.localPackage.prototype.</span>writeNewPackageMetadata
+        <span class="apidocSignatureSpan">(deployDir, writeMetadataCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeNewPackageMetadata = function (deployDir, writeMetadataCallback) {
+    var _this = this;
+    NativeAppInfo.getApplicationBuildTime(function (buildTimeError, timestamp) {
+        NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+            buildTimeError &#x26;&#x26; CodePushUtil.logError(&#x22;Could not get application build time. &#x22; + buildTimeError);
+            appVersionError &#x26;&#x26; CodePushUtil.logError(&#x22;Could not get application version.&#x22; + appVersionError);
+            var currentPackageMetadata = {
+                nativeBuildTime: timestamp,
+                localPath: _this.localPath,
+                appVersion: appVersion,
+                deploymentKey: _this.deploymentKey,
+                description: _this.description,
+                isMandatory: _this.isMandatory,
+                packageSize: _this.packageSize,
+                label: _this.label,
+                packageHash: _this.packageHash,
+                isFirstRun: false,
+                failedInstall: false,
+                install: undefined
+            };
+            LocalPackage.writeCurrentPackageInformation(currentPackageMetadata, writeMetadataCallback);
+        });
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        else {
+            LocalPackage.backupPackageInformationFile(backupIfNeededDone);
+        }
+    });
+}
+LocalPackage.getCurrentOrDefaultPackage(function (oldPackage) {
+    backupPackageInformationFileIfNeeded(function (backupError) {
+        _this.<span class="apidocCodeKeywordSpan">writeNewPackageMetadata</span>(deployDir, function (writeMetadataError) {
+            if (writeMetadataError) {
+                installError &#x26;&#x26; installError(writeMetadataError);
+            }
+            else {
+                var invokeSuccessAndInstall = function () {
+                    CodePushUtil.logMessage(&#x22;Install succeeded.&#x22;);
+                    var installModeToUse = _this.isMandatory ? installOptions.mandatoryInstallMode : installOptions.installMode;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.nativeAppInfo" id="apidoc.module.cordova-plugin-code-push.nativeAppInfo">module cordova-plugin-code-push.nativeAppInfo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.nativeAppInfo" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.nativeAppInfo">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>nativeAppInfo
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function NativeAppInfo() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getApplicationBuildTime" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.getApplicationBuildTime">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getApplicationBuildTime
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApplicationBuildTime = function (callback) {
+    var timestampSuccess = function (timestamp) { callback(null, timestamp); };
+    var timestampError = function () { callback(new Error(&#x22;Could not get application timestamp.&#x22;), null); };
+    cordova.exec(timestampSuccess, timestampError, &#x22;CodePush&#x22;, &#x22;getNativeBuildTime&#x22;, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                });
+            }
+        });
+    });
+};
+LocalPackage.prototype.writeNewPackageMetadata = function (deployDir, writeMetadataCallback) {
+    var _this = this;
+    NativeAppInfo.<span class="apidocCodeKeywordSpan">getApplicationBuildTime</span>(function (buildTimeError, timestamp) {
+        NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+            buildTimeError &#x26;&#x26; CodePushUtil.logError(&#x22;Could not get application build time. &#x22; + buildTimeError
+);
+            appVersionError &#x26;&#x26; CodePushUtil.logError(&#x22;Could not get application version.&#x22; + appVersionError);
+            var currentPackageMetadata = {
+                nativeBuildTime: timestamp,
+                localPath: _this.localPath,
+                appVersion: appVersion,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getApplicationVersion" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.getApplicationVersion">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getApplicationVersion
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getApplicationVersion = function (callback) {
+    var versionSuccess = function (version) { callback(null, version); };
+    var versionError = function () { callback(new Error(&#x22;Could not get application version.&#x22;), null); };
+    cordova.exec(versionSuccess, versionError, &#x22;CodePush&#x22;, &#x22;getAppVersion&#x22;, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            var queryUpdate = function () {
+Sdk.getAcquisitionManager(function (initError, acquisitionManager) {
+    if (initError) {
+        CodePushUtil.invokeErrorCallback(initError, queryError);
+    }
+    else {
+        LocalPackage.getCurrentOrDefaultPackage(function (localPackage) {
+            NativeAppInfo.<span class="apidocCodeKeywordSpan">getApplicationVersion</span>(function(appVersionError, currentBinaryVersion
+) {
+                if (!appVersionError) {
+                    localPackage.appVersion = currentBinaryVersion;
+                }
+                CodePushUtil.logMessage(&#x22;Checking for update.&#x22;);
+                acquisitionManager.queryUpdateWithCurrentPackage(localPackage, callback);
+            });
+        }, function (error) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getBinaryHash" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.getBinaryHash">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getBinaryHash
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getBinaryHash = function (callback) {
+    var binaryHashSuccess = function (binaryHash) { callback(null, binaryHash); };
+    var binaryHashError = function () { callback(new Error(&#x22;Could not get binary hash.&#x22;), null); };
+    cordova.exec(binaryHashSuccess, binaryHashError, &#x22;CodePush&#x22;, &#x22;getBinaryHash&#x22;, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        var packageFailure = function (error) {
+NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+    if (appVersionError) {
+        CodePushUtil.logError(&#x22;Could not get application version.&#x22; + appVersionError);
+        packageError(appVersionError);
+        return;
+    }
+    NativeAppInfo.<span class="apidocCodeKeywordSpan">getBinaryHash</span>(function (binaryHashError, binaryHash) {
+        var defaultPackage = new LocalPackage();
+        defaultPackage.appVersion = appVersion;
+        if (binaryHashError) {
+            CodePushUtil.logError(&#x22;Could not get binary hash.&#x22; + binaryHashError);
+        }
+        else {
+            defaultPackage.packageHash = binaryHash;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getDeploymentKey" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.getDeploymentKey">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getDeploymentKey
+        <span class="apidocSignatureSpan">(deploymentKeyCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDeploymentKey = function (deploymentKeyCallback) {
+    var deploymentSuccess = function (deploymentKey) { deploymentKeyCallback(null, deploymentKey); };
+    var deploymentError = function () { deploymentKeyCallback(new Error(&#x22;Deployment key not found.&#x22;), null); };
+    cordova.exec(deploymentSuccess, deploymentError, &#x22;CodePush&#x22;, &#x22;getDeploymentKey&#x22;, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+    }, deploymentKey);
+};
+if (deploymentKey) {
+    queryUpdate();
+}
+else {
+    NativeAppInfo.<span class="apidocCodeKeywordSpan">getDeploymentKey</span>(function (deploymentKeyError, defaultDeploymentKey
+) {
+        if (deploymentKeyError) {
+            CodePushUtil.invokeErrorCallback(deploymentKeyError, queryError);
+        }
+        else {
+            deploymentKey = defaultDeploymentKey;
+            queryUpdate();
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.getServerURL" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.getServerURL">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>getServerURL
+        <span class="apidocSignatureSpan">(serverCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getServerURL = function (serverCallback) {
+    var serverSuccess = function (serverURL) { serverCallback(null, serverURL); };
+    var serverError = function () { serverCallback(null, DefaultServerUrl); };
+    cordova.exec(serverSuccess, serverError, &#x22;CodePush&#x22;, &#x22;getServerURL&#x22;, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        callback(new Error(&#x22;No deployment key provided, please provide a default one in your config.xml or specify one in the
+ call to checkForUpdate() or sync().&#x22;), null);
+    }
+};
+if (Sdk.DefaultAcquisitionManager) {
+    resolveManager();
+}
+else {
+    NativeAppInfo.<span class="apidocCodeKeywordSpan">getServerURL</span>(function (serverError, serverURL) {
+        NativeAppInfo.getDeploymentKey(function (depolymentKeyError, deploymentKey) {
+            NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+                if (!appVersion) {
+                    callback(new Error(&#x22;Could not get the app version. Please check your config.xml file.&#x22;), null);
+                }
+                else if (!serverURL) {
+                    callback(new Error(&#x22;Could not get the CodePush configuration. Please check your config.xml file.&#x22;),
+null);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.isFailedUpdate" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.isFailedUpdate">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>isFailedUpdate
+        <span class="apidocSignatureSpan">(packageHash, checkCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFailedUpdate = function (packageHash, checkCallback) {
+    var win = function (failed) {
+        checkCallback &#x26;&#x26; checkCallback(!!failed);
+    };
+    var fail = function (e) {
+        win(0);
+    };
+    cordova.exec(win, fail, &#x22;CodePush&#x22;, &#x22;isFailedUpdate&#x22;, [packageHash]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                    if (remotePackageOrUpdateNotification) {
+if (remotePackageOrUpdateNotification.updateAppVersion) {
+    CodePushUtil.logMessage(&#x22;An update is available, but it is targeting a newer binary version than you are currently running
+.&#x22;);
+    appUpToDate();
+}
+else {
+    var remotePackage = remotePackageOrUpdateNotification;
+    NativeAppInfo.<span class="apidocCodeKeywordSpan">isFailedUpdate</span>(remotePackage.packageHash, function (installFailed) {
+        var result = new RemotePackage();
+        result.appVersion = remotePackage.appVersion;
+        result.deploymentKey = deploymentKey;
+        result.description = remotePackage.description;
+        result.downloadUrl = remotePackage.downloadUrl;
+        result.isMandatory = remotePackage.isMandatory;
+        result.label = remotePackage.label;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.isFirstRun" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.isFirstRun">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>isFirstRun
+        <span class="apidocSignatureSpan">(packageHash, firstRunCallback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFirstRun = function (packageHash, firstRunCallback) {
+    var win = function (firstRun) {
+        firstRunCallback(!!firstRun);
+    };
+    var fail = function () {
+        firstRunCallback(false);
+    };
+    cordova.exec(win, fail, &#x22;CodePush&#x22;, &#x22;isFirstRun&#x22;, [packageHash]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+LocalPackage.getLocalPackageFromMetadata = function (metadata, packageSuccess, packageError) {
+    if (!metadata) {
+        packageError &#x26;&#x26; packageError(new Error(&#x22;Invalid package metadata.&#x22;));
+    }
+    else {
+        NativeAppInfo.isFailedUpdate(metadata.packageHash, function (installFailed) {
+            NativeAppInfo.<span class="apidocCodeKeywordSpan">isFirstRun</span>(metadata.packageHash, function (isFirstRun) {
+                var localPackage = new LocalPackage();
+                localPackage.appVersion = metadata.appVersion;
+                localPackage.deploymentKey = metadata.deploymentKey;
+                localPackage.description = metadata.description;
+                localPackage.failedInstall = installFailed;
+                localPackage.isFirstRun = isFirstRun;
+                localPackage.label = metadata.label;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.nativeAppInfo.isPendingUpdate" id="apidoc.element.cordova-plugin-code-push.nativeAppInfo.isPendingUpdate">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.nativeAppInfo.</span>isPendingUpdate
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isPendingUpdate = function (callback) {
+    var win = function (firstRun) {
+        callback(!!firstRun);
+    };
+    var fail = function () {
+        callback(false);
+    };
+    cordova.exec(win, fail, &#x22;CodePush&#x22;, &#x22;isPendingUpdate&#x22;, []);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            break;
+        case ReportStatus.UPDATE_ROLLED_BACK:
+            Sdk.reportStatusDeploy(createPackageForReporting(label, appVersion), AcquisitionStatus.DeploymentFailed, deploymentKey
+, previousLabelOrAppVersion, previousDeploymentKey, reportDone);
+            break;
+    }
+};
+CodePush.prototype.getCurrentPackage = function (packageSuccess, packageError) {
+    NativeAppInfo.<span class="apidocCodeKeywordSpan">isPendingUpdate</span>(function (pendingUpdate) {
+        var packageInfoFile = pendingUpdate ? LocalPackage.OldPackageInfoFile : LocalPackage.PackageInfoFile;
+        LocalPackage.getPackageInfoOrNull(packageInfoFile, packageSuccess, packageError);
+    });
+};
+CodePush.prototype.getPendingPackage = function (packageSuccess, packageError) {
+    NativeAppInfo.isPendingUpdate(function (pendingUpdate) {
+        if (pendingUpdate) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.remotePackage" id="apidoc.module.cordova-plugin-code-push.remotePackage">module cordova-plugin-code-push.remotePackage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.remotePackage.remotePackage" id="apidoc.element.cordova-plugin-code-push.remotePackage.remotePackage">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>remotePackage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RemotePackage() {
+    _super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.remotePackage.prototype" id="apidoc.module.cordova-plugin-code-push.remotePackage.prototype">module cordova-plugin-code-push.remotePackage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.remotePackage.prototype.abortDownload" id="apidoc.element.cordova-plugin-code-push.remotePackage.prototype.abortDownload">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.remotePackage.prototype.</span>abortDownload
+        <span class="apidocSignatureSpan">(abortSuccess, abortError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">abortDownload = function (abortSuccess, abortError) {
+    try {
+        if (this.currentFileTransfer) {
+            this.currentFileTransfer.abort();
+            abortSuccess &#x26;&#x26; abortSuccess();
+        }
+    }
+    catch (e) {
+        abortError &#x26;&#x26; abortError(e);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.remotePackage.prototype.constructor" id="apidoc.element.cordova-plugin-code-push.remotePackage.prototype.constructor">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.remotePackage.prototype.</span>constructor
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RemotePackage() {
+    _super.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.remotePackage.prototype.download" id="apidoc.element.cordova-plugin-code-push.remotePackage.prototype.download">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.remotePackage.prototype.</span>download
+        <span class="apidocSignatureSpan">(successCallback, errorCallback, downloadProgress)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">download = function (successCallback, errorCallback, downloadProgress) {
+    var _this = this;
+    try {
+        CodePushUtil.logMessage(&#x22;Downloading update&#x22;);
+        if (!this.downloadUrl) {
+            CodePushUtil.invokeErrorCallback(new Error(&#x22;The remote package does not contain a download URL.&#x22;), errorCallback);
+        }
+        else {
+            this.currentFileTransfer = new FileTransfer();
+            var downloadSuccess = function (fileEntry) {
+                _this.currentFileTransfer = null;
+                fileEntry.file(function (file) {
+                    NativeAppInfo.isFailedUpdate(_this.packageHash, function (installFailed) {
+                        var localPackage = new LocalPackage();
+                        localPackage.deploymentKey = _this.deploymentKey;
+                        localPackage.description = _this.description;
+                        localPackage.label = _this.label;
+                        localPackage.appVersion = _this.appVersion;
+                        localPackage.isMandatory = _this.isMandatory;
+                        localPackage.packageHash = _this.packageHash;
+                        localPackage.isFirstRun = false;
+                        localPackage.failedInstall = installFailed;
+                        localPackage.localPath = fileEntry.toInternalURL();
+                        CodePushUtil.logMessage(&#x22;Package download success: &#x22; + JSON.stringify(localPackage));
+                        successCallback &#x26;&#x26; successCallback(localPackage);
+                        Sdk.reportStatusDownload(localPackage, localPackage.deploymentKey);
+                    });
+                }, function (fileError) {
+                    CodePushUtil.invokeErrorCallback(new Error(&#x22;Could not access local package. Error code: &#x22; + fileError.code),
+errorCallback);
+                });
+            };
+            var downloadError = function (error) {
+                _this.currentFileTransfer = null;
+                CodePushUtil.invokeErrorCallback(new Error(error.body), errorCallback);
+            };
+            this.currentFileTransfer.onprogress = function (progressEvent) {
+                if (downloadProgress) {
+                    var dp = { receivedBytes: progressEvent.loaded, totalBytes: progressEvent.total };
+                    downloadProgress(dp);
+                }
+            };
+            this.currentFileTransfer.download(this.downloadUrl, cordova.file.dataDirectory + LocalPackage.DownloadDir + &#x22;/&#x22; + LocalPackage
+.PackageUpdateFileName, downloadSuccess, downloadError, true);
+        }
+    }
+    catch (e) {
+        CodePushUtil.invokeErrorCallback(new Error(&#x22;An error occured while downloading the package. &#x22; + (e &#x26;&#x26; e.message) ? e.message
+ : &#x22;&#x22;), errorCallback);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (!remotePackage) {
+        console.log(&#x22;The application is up to date.&#x22;);
+    } else {
+        // The hash of each previously reverted package is stored for later use.
+        // This way, we avoid going into an infinite bad update/revert loop.
+        if (!remotePackage.failedInstall) {
+            console.log(&#x22;A CodePush update is available. Package hash: &#x22; + remotePackage.packageHash);
+            remotePackage.<span class="apidocCodeKeywordSpan">download</span>(onPackageDownloaded, onError);
+        } else {
+            console.log(&#x22;The available update was attempted before and failed.&#x22;);
+        }
+    }
+};
+
+window.codePush.checkForUpdate(onUpdateCheck, onError);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cordova-plugin-code-push.sdk" id="apidoc.module.cordova-plugin-code-push.sdk">module cordova-plugin-code-push.sdk</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.sdk.sdk" id="apidoc.element.cordova-plugin-code-push.sdk.sdk">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.</span>sdk
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Sdk() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.sdk.getAcquisitionManager" id="apidoc.element.cordova-plugin-code-push.sdk.getAcquisitionManager">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.sdk.</span>getAcquisitionManager
+        <span class="apidocSignatureSpan">(callback, userDeploymentKey, contentType)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getAcquisitionManager = function (callback, userDeploymentKey, contentType) {
+    var resolveManager = function () {
+        if (userDeploymentKey !== Sdk.DefaultConfiguration.deploymentKey || contentType) {
+            var customConfiguration = {
+                deploymentKey: userDeploymentKey || Sdk.DefaultConfiguration.deploymentKey,
+                serverUrl: Sdk.DefaultConfiguration.serverUrl,
+                ignoreAppVersion: Sdk.DefaultConfiguration.ignoreAppVersion,
+                appVersion: Sdk.DefaultConfiguration.appVersion,
+                clientUniqueId: Sdk.DefaultConfiguration.clientUniqueId
+            };
+            var requester = new HttpRequester(contentType);
+            var customAcquisitionManager = new AcquisitionManager(requester, customConfiguration);
+            callback(null, customAcquisitionManager);
+        }
+        else if (Sdk.DefaultConfiguration.deploymentKey) {
+            callback(null, Sdk.DefaultAcquisitionManager);
+        }
+        else {
+            callback(new Error(&#x22;No deployment key provided, please provide a default one in your config.xml or specify one in the
+ call to checkForUpdate() or sync().&#x22;), null);
+        }
+    };
+    if (Sdk.DefaultAcquisitionManager) {
+        resolveManager();
+    }
+    else {
+        NativeAppInfo.getServerURL(function (serverError, serverURL) {
+            NativeAppInfo.getDeploymentKey(function (depolymentKeyError, deploymentKey) {
+                NativeAppInfo.getApplicationVersion(function (appVersionError, appVersion) {
+                    if (!appVersion) {
+                        callback(new Error(&#x22;Could not get the app version. Please check your config.xml file.&#x22;), null);
+                    }
+                    else if (!serverURL) {
+                        callback(new Error(&#x22;Could not get the CodePush configuration. Please check your config.xml file.&#x22;), null
+);
+                    }
+                    else {
+                        Sdk.DefaultConfiguration = {
+                            deploymentKey: deploymentKey,
+                            serverUrl: serverURL,
+                            ignoreAppVersion: false,
+                            appVersion: appVersion,
+                            clientUniqueId: device.uuid
+                        };
+                        if (deploymentKey) {
+                            Sdk.DefaultAcquisitionManager = new AcquisitionManager(new HttpRequester(), Sdk.DefaultConfiguration
+);
+                        }
+                        resolveManager();
+                    }
+                });
+            });
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+        else {
+            appUpToDate();
+        }
+    }
+};
+var queryUpdate = function () {
+    Sdk.<span class="apidocCodeKeywordSpan">getAcquisitionManager</span>(function (initError, acquisitionManager) {
+        if (initError) {
+            CodePushUtil.invokeErrorCallback(initError, queryError);
+        }
+        else {
+            LocalPackage.getCurrentOrDefaultPackage(function (localPackage) {
+                NativeAppInfo.getApplicationVersion(function(appVersionError, currentBinaryVersion) {
+                    if (!appVersionError) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.sdk.reportStatusDeploy" id="apidoc.element.cordova-plugin-code-push.sdk.reportStatusDeploy">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.sdk.</span>reportStatusDeploy
+        <span class="apidocSignatureSpan">(pkg, status, currentDeploymentKey, previousLabelOrAppVersion, previousDeploymentKey, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reportStatusDeploy = function (pkg, status, currentDeploymentKey, previousLabelOrAppVersion, previousDeploymentKey, callback) {
+    try {
+        Sdk.getAcquisitionManager(function (error, acquisitionManager) {
+            if (error) {
+                callback &#x26;&#x26; callback(error, null);
+            }
+            else {
+                acquisitionManager.reportStatusDeploy(pkg, status, previousLabelOrAppVersion, previousDeploymentKey, callback);
+            }
+        }, currentDeploymentKey, &#x22;application/json&#x22;);
+    }
+    catch (e) {
+        callback &#x26;&#x26; callback(e, null);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    else {
+        CodePushUtil.logMessage(&#x22;Reported status: &#x22; + JSON.stringify(reportArgs));
+        cordova.exec(null, null, &#x22;CodePush&#x22;, &#x22;reportSucceeded&#x22;, [reportArgs]);
+    }
+};
+switch (status) {
+    case ReportStatus.STORE_VERSION:
+        Sdk.<span class="apidocCodeKeywordSpan">reportStatusDeploy</span>(null, AcquisitionStatus.DeploymentSucceeded, deploymentKey
+, previousLabelOrAppVersion, previousDeploymentKey, reportDone);
+        break;
+    case ReportStatus.UPDATE_CONFIRMED:
+        Sdk.reportStatusDeploy(createPackageForReporting(label, appVersion), AcquisitionStatus.DeploymentSucceeded, deploymentKey
+, previousLabelOrAppVersion, previousDeploymentKey, reportDone);
+        break;
+    case ReportStatus.UPDATE_ROLLED_BACK:
+        Sdk.reportStatusDeploy(createPackageForReporting(label, appVersion), AcquisitionStatus.DeploymentFailed, deploymentKey,
+previousLabelOrAppVersion, previousDeploymentKey, reportDone);
+        break;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cordova-plugin-code-push.sdk.reportStatusDownload" id="apidoc.element.cordova-plugin-code-push.sdk.reportStatusDownload">
+        function <span class="apidocSignatureSpan">cordova-plugin-code-push.sdk.</span>reportStatusDownload
+        <span class="apidocSignatureSpan">(pkg, deploymentKey, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reportStatusDownload = function (pkg, deploymentKey, callback) {
+    try {
+        Sdk.getAcquisitionManager(function (error, acquisitionManager) {
+            if (error) {
+                callback &#x26;&#x26; callback(error, null);
+            }
+            else {
+                acquisitionManager.reportStatusDownload(pkg, callback);
+            }
+        }, deploymentKey, &#x22;application/json&#x22;);
+    }
+    catch (e) {
+        callback &#x26;&#x26; callback(new Error(&#x22;An error occured while reporting the download status. &#x22; + e), null);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            localPackage.isMandatory = _this.isMandatory;
+            localPackage.packageHash = _this.packageHash;
+            localPackage.isFirstRun = false;
+            localPackage.failedInstall = installFailed;
+            localPackage.localPath = fileEntry.toInternalURL();
+            CodePushUtil.logMessage(&#x22;Package download success: &#x22; + JSON.stringify(localPackage));
+            successCallback &#x26;&#x26; successCallback(localPackage);
+            Sdk.<span class="apidocCodeKeywordSpan">reportStatusDownload</span>(localPackage, localPackage.deploymentKey);
+        });
+    }, function (fileError) {
+        CodePushUtil.invokeErrorCallback(new Error(&#x22;Could not access local package. Error code: &#x22; + fileError.code), errorCallback
+);
+    });
+};
+var downloadError = function (error) {
+    _this.currentFileTransfer = null;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
